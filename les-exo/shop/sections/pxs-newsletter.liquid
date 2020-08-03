@@ -15,7 +15,7 @@
     pxs-newsletter
     pxs-newsletter-desktop-alignment-{{ section.settings.desktop_alignment }}
     pxs-newsletter-mobile-alignment-{{ section.settings.mobile_alignment }}
-  "
+    {{ section.settings.style }}"
 >
   {% if section.settings.image %}
     <figure
@@ -70,6 +70,26 @@
   "name": "Newsletter",
   "class": "pxs-newsletter-section",
   "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
     {
       "type": "text",
       "id": "title",

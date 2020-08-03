@@ -14,6 +14,7 @@
       <a href="#">{{ 'onboarding.featured_product.title' | t }}</a>
     </h2>
   {%- endunless -%}
+  <p class="product-Description">{{ product.description }}</p>
 {%- endcapture -%}
 
 <script
@@ -72,7 +73,6 @@
 
       {% if section.settings.description != blank or product.description != blank %}
         <div class="product-description rte">
-          {% include 'variant-description' %}
           {% if section.settings.description == blank %}
             {{ product.description }}
           {% else %}

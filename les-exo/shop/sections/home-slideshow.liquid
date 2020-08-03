@@ -32,7 +32,7 @@
   </script>
 
   <div
-    class="{{ slideshow_classes | strip_newlines}} slideshow-section"
+    class="{{ slideshow_classes | strip_newlines}} slideshow-section {{ section.settings.style }}"
     {% if trigger_full_bleed %}
       {% comment %} Header relies on this attribute {% endcomment %}
       data-full-bleed-slideshow
@@ -42,7 +42,7 @@
 
     {% if section.blocks.size > 0 %}
       <section
-        class="
+        class="{{ section.settings.style }}
           full-slideshow-content
           {% if section.blocks.size == 1 %}full-slideshow-single-slide{% endif %}
         "
@@ -138,15 +138,15 @@
             {% if has_content %}
               <div class="slide-text">
                 {% if block.settings.title != blank %}
-                  <h1 class="slide-title">{{ block.settings.title | escape }}</h1>
+                  <h1 class="slide-title {{ section.settings.font_picker }}" style="font-family: {{ section.settings.font_picker }}">{{ block.settings.title | escape }}</h1>
                 {% endif %}
 
                 {% if block.settings.subtitle != blank %}
-                  <h2 class="slide-subtitle">{{ block.settings.subtitle | escape }}</h2>
+                  <h2 class="slide-subtitle {{ section.settings.font_picker }}" style="font-family: {{ section.settings.font_picker }}">{{ block.settings.subtitle | escape }}</h2>
                 {% endif %}
 
                 {% if block.settings.caption != blank %}
-                  <div class="slide-caption">
+                  <div class="slide-caption {{ section.settings.font_picker }}" style="font-family: ">
                     {{ block.settings.caption }}
                   </div>
                 {% endif %}
@@ -173,6 +173,26 @@
   "max_blocks": 5,
   "settings": [
     {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
       "type": "checkbox",
       "id": "enable",
       "label": "Enable"
@@ -187,6 +207,13 @@
       "id": "text_color",
       "label": "Text color",
       "default": "#68574d"
+    },
+    {
+       "type":    "font_picker",
+       "label":   "Text",
+       "id":      "font_picker",
+       "info":    "Text",
+       "default": "helvetica_n4"
     },
     {
       "type": "select",

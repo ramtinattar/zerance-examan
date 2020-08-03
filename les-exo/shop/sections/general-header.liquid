@@ -22,7 +22,7 @@
 {% endunless %}
 
 <div
-  class="main-header-wrapper {{ additional_classes | strip_newlines }}"
+  class="main-header-wrapper {{ section.settings.style }} {{ additional_classes | strip_newlines }}"
   {% unless password_page %}
     data-main-header="{{ section.settings.menu_style }}"
     data-header-bleed-color="header-bleed-{{ section.settings.color_override }}-colors"
@@ -31,7 +31,8 @@
     {% endif %}
   {% endunless %}
   data-section-id="{{ section.id }}"
-  data-section-type="static-header">
+  data-section-type="static-header"
+  >
 
   {% assign enable_promotion = section.settings.show_promotion %}
   {% assign homepage_only = section.settings.promotion_home_only %}
@@ -195,6 +196,26 @@
   "name": "Header",
   "class": "main-header-section",
   "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
     {
       "type": "checkbox",
       "id": "header_sticky",

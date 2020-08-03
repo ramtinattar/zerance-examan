@@ -5,7 +5,7 @@
   <div class="module-inner home-left-right-features">
 
     {% if section.settings.title != blank %}
-      <h1 class="section-title">{{ section.settings.title | escape  }}</h1>
+      <h1 class="section-title ">{{ section.settings.title | escape  }}</h1>
     {% endif %}
 
     {% for block in section.blocks %}
@@ -63,7 +63,7 @@
 
         <div class="home-left-right-text">
           {% if block.settings.title != blank %}
-            <h1 class="feature-title">{{ block.settings.title }}</h1>
+            <h1 class="feature-title " style="color: {{block.settings.text-color}}">{{ block.settings.title }}</h1>
           {% endif %}
 
           {% if block.settings.caption != blank or has_button %}
@@ -153,6 +153,13 @@
           "id": "title",
           "label": "Heading",
           "default": "Alternating content"
+        },
+        {
+           "type":      "color",
+           "id":        "text-color",
+           "label":     "Text",
+           "default":   "#000000",
+           "info":      "Text"
         },
         {
           "type": "textarea",
