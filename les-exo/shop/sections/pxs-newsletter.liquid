@@ -42,7 +42,7 @@
   <div class="pxs-newsletter-content">
     <div class="pxs-newsletter-header">
       {% if section.settings.title != blank %}
-        <h2 class="pxs-newsletter-heading">
+        <h2 style="color: {{ section.settings.color-picker }}" class="pxs-newsletter-heading">
           {{ section.settings.title | escape }}
         </h2>
       {% endif %}
@@ -95,6 +95,13 @@
       "id": "title",
       "label": "Heading",
       "default": "Newsletter"
+    },
+    {
+       "type":      "color",
+       "id":        "color-picker",
+       "label":     "color of heading",
+       "default":   "#000000",
+       "info":      "Text"
     },
     {
       "type": "richtext",

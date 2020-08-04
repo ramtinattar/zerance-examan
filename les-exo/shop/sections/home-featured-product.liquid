@@ -77,6 +77,8 @@
             {{ product.description }}
           {% else %}
             {{ section.settings.description }}
+            <img class="product-logo" src="{{ section.settings.logo | img_url : '250x' }}" alt="{{ section.settings.logo.alt }}"/>
+            <div class="product-logo-description">{{section.settings.logo-text}}</div>
           {% endif %}
         </div>
       {% endif %}
@@ -136,6 +138,16 @@
       "label": "Description",
       "default": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.</p>",
       "info": "Override your long product description with one better suited to the home page."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo of description"
+    },
+    {
+      "type": "richtext",
+      "id": "logo-text",
+      "label": "description of logo"
     },
     {
       "type": "checkbox",

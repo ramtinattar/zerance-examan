@@ -24,7 +24,7 @@
               {%
                 include 'rimg',
                 img: block.settings.image,
-                size: '660x440',
+                size: '860x640',
                 class: 'feature-image',
                 lazy: true
               %}
@@ -69,7 +69,7 @@
           {% if block.settings.caption != blank or has_button %}
             <div class="rte">
               {% if block.settings.caption != blank %}
-                <p>{{ block.settings.caption | escape | newline_to_br }}</p>
+                <p class="home-left-right-caption">{{ block.settings.caption | escape | newline_to_br }}</p>
               {% endif %}
 
               {% if has_button %}

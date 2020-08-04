@@ -30,13 +30,12 @@
     {% assign menu_class = menu_class | plus: 1 %}
   {% endif %}
 
+
   <footer class="main-footer showing-{{ menu_class }}-lists">
+    <div class="footer__logo">
+      <img class="" src="{{ section.settings.image | img_url : 'master' }}" alt="{{ section.settings.image.alt }}">
+    </div>
     <div class="footer-columns">
-
-      <div class="footer__logo">
-        <img class="" src="{{ section.settings.image | img_url : 'master' }}" alt="{{ section.settings.image.alt }}">
-      </div>
-
       {% for i in (1..2) %}
         {% capture menu %}menu_{{ i }}{% endcapture %}
         {% if menus[section.settings[menu]].links.size > 0 %}
@@ -126,10 +125,10 @@
         </div>
       {% endif %}
     </div>
-
-    <div role="contentinfo" class="copyright footer-module align-center">
+    <!--  -->
+    <div role="contentinfo" class="copyright footer-module align-center" >
       {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
-      <p>
+      <p style="color: {{ section.settings.color-picker }}">
         {{ shop.name }} {{ 'general.general.copyright_text_html' | t: year: year, shop_name: shop.name }}
         <br>
         {{ section.settings.text }}
@@ -260,6 +259,13 @@
       "id": "text",
       "label": "Texte",
       "default": "2 rue Paul Vaillant Couturier, 92300, Levallois-Perret."
+    },
+    {
+       "type":      "color",
+       "id":        "color-picker",
+       "label":     "color of text",
+       "default":   "#000000",
+       "info":      "Text"
     }
   ]
 }

@@ -1,9 +1,27 @@
+// home-slideshow.liquid
+
 .slide-button {
   background-color: black;
   color: white;
   // height: 40px;
   // line-height: 20px;
 }
+
+.slide-button:hover {
+  background-color: #fcc0b4;
+}
+
+// home-text-columns-with-images.liquid
+
+.home-inline-feature .feature-title {
+  font-size: 16px;
+}
+
+.rte p {
+  font-size: 16px;
+}
+
+// home-futured-product.liquid
 
 .input-checkbox-title{
   padding: 10px;
@@ -19,17 +37,139 @@
   margin-top: 10px;
 }
 
-.variant-description {
-  display: none;
-}
-
 .product-gallery--media-thumbnail[data-product-gallery-selected="true"]::after {
   box-shadow: none;
 }
 
-.pxs-newsletter-section {
-  // background-color: white;
+.product__add-to-cart .button {
+  height: 80px;
+  color: black;
 }
 
+.product-Description{
+  font-size: 17px;
+}
+
+.product__price--old {
+  font-weight: bold;
+  text-decoration-color: #fcc0b4;
+}
+
+.red {
+  color: black;
+  font-weight: bold;
+}
+
+.product-logo-box {
+  display: inline-block;
+}
+
+.product-logo {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.product-logo-description {
+  display: inline-block;
+  position: absolute;
+  margin-top: -10px;
+  line-height: 70%;
+  font-size: 6px;
+}
+
+.product-gallery--media-thumbnail {
+  max-width: 25%;
+}
+
+@media(max-width: 846px) {
+  .product-description {
+    text-align: center;
+  }
+
+  .product-logo-description {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+  }
+
+  .input-checkbox-title{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .input-checkbox-wrapper  {
+    margin-right: 0;
+    width: 50%;
+    padding: 5px;
+  }
+
+}
+
+// home-alternating-content.liquid
+
+.home-left-right-caption {
+  font-size: 16px;
+}
+
+@media(min-width: 1024px) {
+  .home-left-right-feature:first-child {
+    margin-bottom: -150px;
+  }
+}
+
+@media(max-width: 846px) {
+  .home-left-right-feature:nth-child(odd) .home-left-right-media img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-left-right-feature:nth-child(even) .home-left-right-media img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .feature-title,
+  .home-left-right-caption {
+    text-align: center;
+  }
+}
+
+// pxs-video.liquid
+
 .pxs-video {
+  // top: -25%;
+  // position: relative;
+  // overflow: hidden;
+  // z-index: -1;
+}
+
+// pxs-newsletter.liquid
+
+.pxs-newsletter .inline-field-submit {
+  background-color: #fcc0b4;
+  height: 60px;
+}
+
+.accent-style .input-field {
+  border: none;
+  background-color: #E7E8E0;
+  height: 60px;
+}
+
+.pxs-newsletter {
+    max-width: 2280px;
+}
+
+// general-footer.liquid
+
+.footer__logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
