@@ -1,10 +1,9 @@
-<section id="section-{{ section.id }}" class="relative section" data-section-id="{{ section.id }}" data-section-type="home-custom-reviews">
+<section id="section-{{ section.id }}" class="relative section" data-section-id="{{ section.id }}" data-section-type="home-custom-reviews" style="background-color: {{section.settings.background-color}}">
   <div class="home-custom-reviews">
     <div class="relative">
       <div class="home-custom-reviews__container">
         <img class="reviews__image1" src="{{ section.settings.image1 | img_url : 'master' }}" alt="{{ section.settings.image1.alt }}">
       </div>
-
       <div class="reviews reviews1">
         <div class="reviews__text">
           {{ section.settings.review1 }}
@@ -19,7 +18,7 @@
         </div>
       </div>
 
-      <div class="reviews reviews2">
+      <!-- <div class="reviews reviews2">
         <div class="reviews__text">
           {{ section.settings.review2 }}
         </div>
@@ -31,9 +30,9 @@
             {{ section.settings.product2 }}
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="reviews reviews3">
+      <!-- <div class="reviews reviews3">
         <div class="reviews__text">
           {{ section.settings.review3 }}
         </div>
@@ -45,7 +44,7 @@
             {{ section.settings.product3 }}
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="relative reviews__image2-container">
       <img class="reviews__image2" src="{{ section.settings.image2 | img_url : 'master' }}" alt="{{ section.settings.image2.alt }}">
@@ -61,14 +60,21 @@
   "name": "Custom reviews",
   "settings": [
     {
+     "type":      "color",
+     "id":        "background-color",
+     "label":     "change the background color",
+     "default":   "#ffffff",
+     "info":      "Text"
+    },
+    {
       "type": "image_picker",
       "id": "image1",
-      "label": "Image right"
+      "label": "Image left"
     },
     {
       "type": "image_picker",
       "id": "image2",
-      "label": "Image left bottom"
+      "label": "Image right bottom"
     },
     {
       "type": "text",

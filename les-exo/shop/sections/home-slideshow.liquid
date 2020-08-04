@@ -142,11 +142,11 @@
                 {% endif %}
 
                 {% if block.settings.subtitle != blank %}
-                  <h2 class="slide-subtitle {{ section.settings.font_picker }}" style="font-family: {{ section.settings.font_picker }}">{{ block.settings.subtitle | escape }}</h2>
+                  <h2 class="slide-subtitle {{ section.settings.font_picker }}" >{{ block.settings.subtitle | escape }}</h2>
                 {% endif %}
 
                 {% if block.settings.caption != blank %}
-                  <div class="slide-caption {{ section.settings.font_picker }}" style="font-family: ">
+                  <div class="slide-caption {{ section.settings.font_picker }}" >
                     {{ block.settings.caption }}
                   </div>
                 {% endif %}
