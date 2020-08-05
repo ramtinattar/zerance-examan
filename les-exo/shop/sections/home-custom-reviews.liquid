@@ -3,16 +3,35 @@
     <div class="relative">
       <div class="home-custom-reviews__container">
         <img class="reviews__image1" src="{{ section.settings.image1 | img_url : 'master' }}" alt="{{ section.settings.image1.alt }}">
+
+        <div class="home-custom-reviews__circle-container" id="container">
+          <div id="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+              <defs>
+                <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+              </defs>
+              <circle cx="150" cy="100" r="75" fill="none"/>
+              <g>
+                <use xlink:href="#circlePath" fill="none"/>
+                <text fill="{{ section.settings.text-color }}">
+                  <textPath xlink:href="#circlePath">
+                    {{ section.settings.circle-text }}
+                  </textPath>
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="reviews reviews1">
-        <div class="reviews__text">
+        <div class="reviews__text" style="color: {{ section.settings.reviews-text-color }}">
           {{ section.settings.review1 }}
         </div>
         <div>
-          <div class="reviews__author">
+          <div class="reviews__author" style="color: {{ section.settings.autor-text-color }}">
             {{ section.settings.author1 }}
           </div>
-          <div class="reviews__product">
+          <div class="reviews__product" style="color: {{ section.settings.product-text-color }}">
             {{ section.settings.product1 }}
           </div>
         </div>
@@ -72,6 +91,17 @@
       "label": "Image left"
     },
     {
+      "type": "text",
+      "id": "circle-text",
+      "label": "circle-text"
+    },
+    {
+      "type":      "color",
+      "id":        "text-color",
+      "label":     "circle text color",
+      "default":   "#000000"
+    },
+    {
       "type": "image_picker",
       "id": "image2",
       "label": "Image right bottom"
@@ -82,14 +112,32 @@
       "label": "Review 1"
     },
     {
+      "type":      "color",
+      "id":        "reviews-text-color",
+      "label":     "reviews text color",
+      "default":   "#000000"
+    },
+    {
       "type": "text",
       "id": "author1",
       "label": "Author 1"
     },
     {
+      "type":      "color",
+      "id":        "autor-text-color",
+      "label":     "autor text color",
+      "default":   "#000000"
+    },
+    {
       "type": "text",
       "id": "product1",
       "label": "Product 1"
+    },
+    {
+      "type":      "color",
+      "id":        "product-text-color",
+      "label":     "autor text color",
+      "default":   "#000000"
     },
     {
       "type": "text",
