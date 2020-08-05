@@ -128,8 +128,13 @@
                 canvas: true
               %}
             {% else %}
-              {{ placeholder_image_style | placeholder_svg_tag: 'placeholder-svg slide-image' }}
+              <video  style="max-width: 100%; height: auto;" loop="" muted="" autoplay="autoplay" preload="">
+                <source src="https://cdn.shopify.com/s/files/1/0450/0622/5570/files/SLEEPINGCLUB_IMERSIVE_V02.mp4?v=1596638625" type="video/mp4" />
+                Your browser does not support our video.
+              </video>
+              <!-- {{ placeholder_image_style | placeholder_svg_tag: 'placeholder-svg slide-image' }} -->
             {% endif %}
+
 
             {% if block.settings.link != blank %}
               </a>
@@ -282,7 +287,7 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image",
-          "info": "[Read more](https://support.pixelunion.net/article/335-setting-up-your-homepage#Slideshow) about image sizes"
+          "info": "[Read more](https://support.pixelunion.net/article/335-setting-up-your-homepage#Slideshow) about image sizes (if no image, video shows up)"
         },
         {
           "type": "select",
