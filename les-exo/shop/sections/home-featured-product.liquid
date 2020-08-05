@@ -14,7 +14,9 @@
       <a href="#">{{ 'onboarding.featured_product.title' | t }}</a>
     </h2>
   {%- endunless -%}
-  <p class="product-Description">{{ product.description }}</p>
+  {% unless product.description == blank %}
+    <p class="product-Description">{{ product.description }}</p>
+  {% endunless %}
 {%- endcapture -%}
 
 <script
@@ -71,11 +73,9 @@
         form_id: section.id
       %}
 
-      {% if section.settings.description != blank or product.description != blank %}
+      {% if section.settings.description != blank %}
         <div class="product-description rte">
-          {% if section.settings.description == blank %}
-            {{ product.description }}
-          {% else %}
+          {% if section.settings.description != blank %}
             {{ section.settings.description }}
             <img class="product-logo" src="{{ section.settings.logo | img_url : '250x' }}" alt="{{ section.settings.logo.alt }}"/>
             <div class="product-logo-description">{{section.settings.logo-text}}</div>
