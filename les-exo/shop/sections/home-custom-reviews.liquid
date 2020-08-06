@@ -3,7 +3,6 @@
     <div class="relative">
       <div class="home-custom-reviews__container">
         <img class="reviews__image1" src="{{ section.settings.image1 | img_url : 'master' }}" alt="{{ section.settings.image1.alt }}">
-
         <div class="home-custom-reviews__circle-container" id="container">
           <div id="circle">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
@@ -36,34 +35,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="reviews reviews2">
-        <div class="reviews__text">
-          {{ section.settings.review2 }}
-        </div>
-        <div>
-          <div class="reviews__author">
-            {{ section.settings.author2 }}
-          </div>
-          <div class="reviews__product">
-            {{ section.settings.product2 }}
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="reviews reviews3">
-        <div class="reviews__text">
-          {{ section.settings.review3 }}
-        </div>
-        <div>
-          <div class="reviews__author">
-            {{ section.settings.author3 }}
-          </div>
-          <div class="reviews__product">
-            {{ section.settings.product3 }}
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="relative reviews__image2-container">
       <img class="reviews__image2" src="{{ section.settings.image2 | img_url : 'master' }}" alt="{{ section.settings.image2.alt }}">
@@ -109,7 +80,7 @@
     {
       "type": "text",
       "id": "review1",
-      "label": "Review 1"
+      "label": "Review"
     },
     {
       "type":      "color",
@@ -120,7 +91,7 @@
     {
       "type": "text",
       "id": "author1",
-      "label": "Author 1"
+      "label": "Author"
     },
     {
       "type":      "color",
@@ -131,43 +102,13 @@
     {
       "type": "text",
       "id": "product1",
-      "label": "Product 1"
+      "label": "Product"
     },
     {
       "type":      "color",
       "id":        "product-text-color",
       "label":     "autor text color",
       "default":   "#000000"
-    },
-    {
-      "type": "text",
-      "id": "review2",
-      "label": "Review 2"
-    },
-    {
-      "type": "text",
-      "id": "author2",
-      "label": "Author 2"
-    },
-    {
-      "type": "text",
-      "id": "product2",
-      "label": "Product 2"
-    },
-    {
-      "type": "text",
-      "id": "review3",
-      "label": "Review 3"
-    },
-    {
-      "type": "text",
-      "id": "author3",
-      "label": "Author 3"
-    },
-    {
-      "type": "text",
-      "id": "product3",
-      "label": "Product 3"
     },
     {
       "type": "image_picker",
