@@ -146,12 +146,19 @@
       </div>
     {% endif %}
 
-    <div
+    <!-- <div
       class="video video-{{ video_type }}"
       data-video="{{ video_type }}"
       data-video-id="{{ video_id }}"
     >
-    </div>
+    </div> -->
+    <video class="video video-{{ video_type }}"
+    data-video="{{ video_type }}"
+    data-video-id="{{ video_id }}" style="max-width: 100%; max-height: 617px;" controls="controls" >
+      <source src="https://cdn.shopify.com/s/files/1/0450/0622/5570/files/SLEEPINGCLUB_Produit_V01-2.mp4?v=1596732228" type="video/mp4" />
+      Your browser does not support our video.
+    </video>
+
   </div>
 </div>
 
@@ -195,13 +202,6 @@
     {
       "type": "header",
       "content": "Video"
-    },
-    {
-      "type": "video_url",
-      "id": "video",
-      "label": "YouTube or Vimeo link",
-      "accept": ["youtube", "vimeo"],
-      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
     },
     {
       "type": "select",
